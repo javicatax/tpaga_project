@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+</head>
+<body>
+    <h1>{{ object.purchase_description }}</h1>
+    <p>Status: {{ object.status }}</p>
+    <p>TPAGA URL payment: {{ object.tpaga_payment_url }}</p>
+    <p>Items:</p>
+    <p>
+        {% for item in object.items.all %}
+            {{ item.item.name }}
+            {{ item.item.value }}
+        {% endfor %}
+    </p>
+</body>
+</html>

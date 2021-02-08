@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Orders</h1>
+    <ul>
+        {% for order in object_list %}
+            <li>
+                {{ order.purchase_description }} - {{ order.cost }}
+                <a href="{{ order.tpaga_payment_url }}">Payment URL</a>
+            </li>
+        {% empty %}
+            <li>No orders yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
